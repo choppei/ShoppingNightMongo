@@ -36,6 +36,11 @@ namespace ShoppingNightMongo.Services.ProductServices
             return _mapper.Map<List<ResultProductDto>>(values);
         }
 
+        public Task<List<ResultProductDto>> GetAllProductAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<GetProductByIdDto> GetProductByIdAsync(string id)
         {
             var value=await _productCollection.Find(x=>x.ProductId==id).FirstOrDefaultAsync();
